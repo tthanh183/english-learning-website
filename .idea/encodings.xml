@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/PBL3-core-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-dao-impl/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-dao-impl/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-dao/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-dao/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-data/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-data/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-dto/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-dto/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-persistence-data/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-persistence-data/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-service-impl/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-service-impl/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-test/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-utils/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-utils/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-core-web/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-web-logic/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-web-logic/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PBL3-web/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

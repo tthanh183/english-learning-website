@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/common/admin/menu.jsp" value="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/common/admin" />
+        <entry key="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/common/taglib.jsp" value="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/common" />
+        <entry key="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/decorators/admin.jsp" value="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/decorators" />
+        <entry key="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/decorators/web.jsp" value="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/decorators" />
+        <entry key="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/index.jsp" value="file://$PROJECT_DIR$/PBL3-web/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/views/admin/listenguideline/edit.jsp" value="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/views/admin/listenguideline" />
+        <entry key="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/views/admin/listenguideline/list.jsp" value="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/views/admin/listenguideline" />
+      </map>
+    </option>
+  </component>
+</project>

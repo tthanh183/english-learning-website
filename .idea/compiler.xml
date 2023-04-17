@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="PBL3-core-dao-impl" />
+        <module name="PBL3-core-common" />
+        <module name="PBL3-core-dto" />
+        <module name="PBL3-core-service-impl" />
+        <module name="PBL3-core-data" />
+        <module name="PBL3-core-utils" />
+        <module name="PBL3-web" />
+        <module name="PBL3-core-service" />
+        <module name="PBL3-core-persistence-data" />
+        <module name="PBL3-web-logic" />
+        <module name="PBL3-core-web" />
+        <module name="PBL3-core-test" />
+        <module name="PBL3-core-dao" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
