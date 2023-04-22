@@ -70,7 +70,7 @@ public class SingletonDaoUtil {
         return exerciseQuestionDaoImpl;
     }
     public static ResultDaoImpl getResultDaoInstance()  {
-        if(resultDaoImpl != null) {
+        if(resultDaoImpl == null) {
             resultDaoImpl = new ResultDaoImpl();
         }
         return resultDaoImpl;

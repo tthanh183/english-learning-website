@@ -18,7 +18,7 @@ public class ResultServiceImpl implements ResultService {
         ResultDTO result = new ResultDTO();
         if (email != null && examinationId != null && examinationQuestions != null) {
             UserEntity user = SingletonDaoUtil.getUserDaoInstance().findEqualUnique("email", email);
-            ExaminationEntity examination = SingletonDaoUtil.getExaminationDaoInstance().findByID(examinationId);
+            ExaminationEntity examination = SingletonDaoUtil.getExaminationDaoInstance().findById(examinationId);
             ResultEntity resultEntity = new ResultEntity();
             calculateListenAndReadScore(resultEntity, examinationQuestions);
             initDataToResultEntity(resultEntity, user, examination);

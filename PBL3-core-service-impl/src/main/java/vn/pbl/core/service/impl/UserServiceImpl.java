@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDTO findById(Integer userId) {
-        UserEntity entity = SingletonDaoUtil.getUserDaoInstance().findByID(userId);
+        UserEntity entity = SingletonDaoUtil.getUserDaoInstance().findById(userId);
         UserDTO dto = UserBeanUtil.entity2Dto(entity);
         return dto;
     }

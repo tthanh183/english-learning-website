@@ -23,7 +23,7 @@ public class UserDaoImpl extends AbstractDao<Integer, UserEntity> implements Use
         boolean isUserExist = false;
         String roleName = null;
         try {
-            StringBuilder sql = new StringBuilder("FROM UserEntity ue WHERE ue.email= :email AND ue.password= : password  ");
+            StringBuilder sql = new StringBuilder("FROM UserEntity ue WHERE ue.email= :email AND ue.password= :password  ");
             Query query = session.createQuery(sql.toString());
             query.setParameter("email", email);
             query.setParameter("password", password);

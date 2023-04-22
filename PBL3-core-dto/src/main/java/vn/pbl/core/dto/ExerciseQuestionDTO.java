@@ -2,9 +2,6 @@ package vn.pbl.core.dto;
 
 import java.sql.Timestamp;
 
-/**
- * Created by Admin on 26/11/2017.
- */
 public class ExerciseQuestionDTO {
     private Integer exerciseQuestionId;
     private String image;

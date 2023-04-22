@@ -20,7 +20,7 @@ public class RoleDaoImpl extends AbstractDao<Integer, RoleEntity> implements Rol
         Transaction transaction = session.beginTransaction();
         List<RoleEntity> roleEntities = new ArrayList<RoleEntity>();
         try {
-            StringBuilder sql = new StringBuilder("FROM RoleEntity re WHERE re.roleName IN(:roles) ");
+            StringBuilder sql = new StringBuilder(" FROM RoleEntity re WHERE re.roleName IN(:roles) ");
             Query query = session.createQuery(sql.toString());
             query.setParameterList("roles", roles);
             roleEntities = query.list();

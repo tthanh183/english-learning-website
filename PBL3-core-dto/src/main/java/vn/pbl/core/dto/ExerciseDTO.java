@@ -4,9 +4,6 @@ import vn.pbl.core.dto.ExerciseQuestionDTO;
 import java.sql.Timestamp;
 import java.util.List;
 
-/**
- * Created by Admin on 26/11/2017.
- */
 public class ExerciseDTO {
     private Integer exerciseId;
     private String name;

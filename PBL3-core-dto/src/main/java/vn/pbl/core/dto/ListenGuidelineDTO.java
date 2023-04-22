@@ -3,11 +3,8 @@ package vn.pbl.core.dto;
 import java.io.Serializable;
 
 public class ListenGuidelineDTO implements Serializable {
-
     private Integer listenGuidelineId;
-
     private String title;
-
     private String content;
     private String image;
 

@@ -12,12 +12,11 @@ import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 public class AbstractDao<ID extends Serializable, T> implements GenericDao<ID,T> {
     private final Logger log = Logger.getLogger(this.getClass());
-    private Class<T>  persistenceClass;
+    private Class<T> persistenceClass;
     public AbstractDao() {
-        this.persistenceClass= (Class<T>) ( (ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1];
+        this.persistenceClass = (Class<T>) ((ParameterizedType)getClass().getGenericSuperclass()).getActualTypeArguments()[1];
     }
     public String getPersistenceClassName() {
         return persistenceClass.getSimpleName();
@@ -80,13 +79,15 @@ public class AbstractDao<ID extends Serializable, T> implements GenericDao<ID,T>
     }
 
     @Override
-    public T findByID(ID id) {
+    public T findById(ID id) {
         T result = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         try {
             result = (T) session.get(persistenceClass,id);
-            if(result == null)  throw new ObjectNotFoundException("Not found " + id,null);
+            if(result == null)  {
+                throw new ObjectNotFoundException(" Not found " + id,null);
+            }
         }catch (HibernateException e) {
             transaction.rollback();
             log.error(e.getMessage(),e);
@@ -178,7 +179,7 @@ public class AbstractDao<ID extends Serializable, T> implements GenericDao<ID,T>
         Transaction transaction = session.beginTransaction();
         T result = null;
         try {
-            String sql = " FROM "+getPersistenceClassName()+" model WHERE model." + property + " = :value";
+            String sql = " FROM "+getPersistenceClassName()+" model WHERE model." + property + "= :value";
             Query query = session.createQuery(sql.toString());
             query.setParameter("value", value);
             result = (T) query.uniqueResult();
