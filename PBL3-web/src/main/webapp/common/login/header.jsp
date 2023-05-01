@@ -6,5 +6,4 @@
     </h1>
     <h4 class="blue" id="id-company-text">&copy; Company Name</h4>
 </div>
-
 <div class="space-6"></div>

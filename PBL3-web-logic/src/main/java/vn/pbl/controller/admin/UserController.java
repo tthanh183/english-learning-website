@@ -39,11 +39,7 @@ import java.util.*;
 
 @WebServlet(urlPatterns = {"/admin-user-list.html","/ajax-admin-user-edit.html","/admin-user-import.html",
                             "/admin-user-import-validate.html"})
-@MultipartConfig(
-        fileSizeThreshold = 1024 * 10,
-        maxFileSize = 1024 * 300 ,
-        maxRequestSize = 1024 * 1024 * 50
-)
+
 public class UserController extends HttpServlet {
     private final Logger log = Logger.getLogger(this.getClass());
     private final String SHOW_IMPORT_USER = "show_import_user";
@@ -90,7 +86,7 @@ public class UserController extends HttpServlet {
     }
 
     private List<UserImportDTO> returnListUserImport(UserCommand command,List<UserImportDTO> userImportDTOS, HttpServletRequest request) {
-        command.setMaxPageItems(3);
+        command.setMaxPageItems(10);
         RequestUtil.initSearchBean(request,command);
         command.setTotalItems(userImportDTOS.size());
         int fromIndex = command.getFirstItem();
@@ -109,9 +105,9 @@ public class UserController extends HttpServlet {
 
     private Map<String, String> buildMapRedirectMessage(ResourceBundle bundle) {
         Map<String, String> mapMessage = new HashMap<String, String>();
-        mapMessage.put(WebConstant.REDIRECT_INSERT,bundle.getString("label.user.massage.add.success"));
-        mapMessage.put(WebConstant.REDIRECT_UPDATE,bundle.getString("label.user.massage.update.success"));
-        mapMessage.put(WebConstant.REDIRECT_DELETE,bundle.getString("label.user.massage.delete.success"));
+        mapMessage.put(WebConstant.REDIRECT_INSERT,bundle.getString("label.user.message.add.success"));
+        mapMessage.put(WebConstant.REDIRECT_UPDATE,bundle.getString("label.user.message.update.success"));
+        mapMessage.put(WebConstant.REDIRECT_DELETE,bundle.getString("label.user.message.delete.success"));
         mapMessage.put(WebConstant.REDIRECT_ERROR,bundle.getString("label.message.error"));
         return mapMessage;
     }
@@ -142,6 +138,7 @@ public class UserController extends HttpServlet {
                 RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/edit.jsp");
                 rd.forward(request, response);
             }
+            //here
             if(objects != null ) {
                 String urlType = null;
                 Map<String, String> mapValue = (Map<String, String>) objects[3];
@@ -199,19 +196,19 @@ public class UserController extends HttpServlet {
 
     private void validateRequiredField(UserImportDTO item) {
         String message = "";
-        if(StringUtils.isNotBlank(item.getEmail())) {
+        if(StringUtils.isBlank(item.getEmail())) {
             message += "<br/";
             message += bundle.getString("label.email.notempty");
         }
-        if(StringUtils.isNotBlank(item.getPassword())) {
+        if(StringUtils.isBlank(item.getPassword())) {
             message += "<br/";
             message += bundle.getString("label.password.notempty");
         }
-        if(StringUtils.isNotBlank(item.getRoleName())) {
+        if(StringUtils.isBlank(item.getRoleName())) {
             message += "<br/";
             message += bundle.getString("label.rolename.notempty");
         }
-        if(StringUtils.isNotBlank(message)) {
+        if(StringUtils.isBlank(message)) {
             item.setValid(false);
         }
         item.setError(message);

@@ -12,7 +12,7 @@ public class FormUtil {
             object = (T) clazz.newInstance();
             BeanUtils.populate(object, request.getParameterMap());
         } catch (InstantiationException e) {
-
+            e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {

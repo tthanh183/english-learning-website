@@ -33,7 +33,7 @@
                                 ${messageResponse}
                         </div>
                     </c:if>
-                    <form action="${validateExcel}" method="post" enctype="multipart/form-data" id="formImport" >
+                    <form action="${validateExcel}" method="post" enctype="multipart/form-data" id="formImport">
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="col-sm-12">

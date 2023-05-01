@@ -18,23 +18,20 @@
             <ul class="nav ace-nav">
                 <li class="light-blue dropdown-modal">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                            <span class="user-info">
-                                <small>Xin chào,</small>
-<%--                                ${username}--%>
-                            </span>
-                        <i class="ace-icon fa fa-caret-down"></i>
+                        Welcome, ${login_name}
+
                     </a>
-                    <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                        <li>
-                            <a href="#">
-                                <i class="ace-icon fa fa-power-off"></i>
-                                Thoát
-                            </a>
-                        </li>
-                    </ul>
+                <li class="light-blue dropdown-modal">
+                    <c:url var="logoutUrl" value="/logout.html">
+                        <c:param name="action" value="logout"/>
+                    </c:url>
+                    <a href="${logoutUrl}">
+                        <i class="ace-icon fa fa-power-off"></i>
+                        <fmt:message key="label.logout" bundle="${lang}"/>
+                    </a>
+                </li>
                 </li>
             </ul>
         </div>
-
     </div>
 </div>
