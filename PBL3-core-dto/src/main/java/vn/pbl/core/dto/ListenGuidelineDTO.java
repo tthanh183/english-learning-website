@@ -1,13 +1,14 @@
 package vn.pbl.core.dto;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class ListenGuidelineDTO implements Serializable {
     private Integer listenGuidelineId;
     private String title;
     private String content;
     private String image;
-
+    private List<CommentDTO> comments;
     public Integer getListenGuidelineId() {
         return listenGuidelineId;
     }
@@ -38,5 +39,13 @@ public class ListenGuidelineDTO implements Serializable {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public List<CommentDTO> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<CommentDTO> comments) {
+        this.comments = comments;
     }
 }

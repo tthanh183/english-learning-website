@@ -1,6 +1,7 @@
 package vn.pbl.core.persistence.entity;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "comment")
@@ -12,8 +13,8 @@ public class CommentEntity {
     @Column(name = "content")
     private String content;
 
-    @Column(name = "createdate")
-    private String createDate;
+    @Column(name = "createddate")
+    private Timestamp createdDate;
 
     @ManyToOne
     @JoinColumn(name="userid")
@@ -23,13 +24,6 @@ public class CommentEntity {
     @JoinColumn(name="listenguidelineid")
     private ListenGuidelineEntity listenGuidelineEntity;
 
-    public String getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(String createDate) {
-        this.createDate = createDate;
-    }
 
     public Integer getCommentId() {
         return commentId;
@@ -45,6 +39,14 @@ public class CommentEntity {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Timestamp getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
     }
 
     public UserEntity getUser() {
@@ -63,19 +65,4 @@ public class CommentEntity {
         this.listenGuidelineEntity = listenGuidelineEntity;
     }
 
-    public UserEntity getUserEntity() {
-        return userEntity;
-    }
-
-    public void setUserEntity(UserEntity userEntity) {
-        this.userEntity = userEntity;
-    }
-
-    public ListenGuidelineEntity getListenGuidelineEntity() {
-        return listenGuidelineEntity;
-    }
-
-    public void setListenGuidelineEntity(ListenGuidelineEntity listenGuidelineEntity) {
-        this.listenGuidelineEntity = listenGuidelineEntity;
-    }
 }

@@ -1,8 +1,13 @@
 package vn.pbl.controller.web;
 
 import org.apache.commons.lang.StringUtils;
+import vn.pbl.command.CommentCommand;
 import vn.pbl.command.ListenGuidelineCommand;
+import vn.pbl.core.common.util.SessionUtil;
+import vn.pbl.core.dao.CommentDao;
+import vn.pbl.core.dto.CommentDTO;
 import vn.pbl.core.dto.ListenGuidelineDTO;
+import vn.pbl.core.service.utils.SingletonDaoUtil;
 import vn.pbl.core.web.common.WebConstant;
 import vn.pbl.core.web.utils.FormUtil;
 import vn.pbl.core.web.utils.RequestUtil;
@@ -28,6 +33,9 @@ public class ListenGuidelineController extends HttpServlet {
             String listenGuidelineStr = request.getParameter("listenguidelineid");
             ListenGuidelineDTO existListenGuideline = SingletonServiceUtil.getListenGuidelineServiceInstance().findByListenGuidelineId("listenGuidelineId", Integer.parseInt(listenGuidelineStr));
             command.setPojo(existListenGuideline);
+            Object[] obj= SingletonServiceUtil.getCommentServiceInstance().findAllCommentByProperties(null,null,null,null,null,existListenGuideline.getListenGuidelineId());
+            List<CommentDTO> comment = (List<CommentDTO>)obj[1];
+            request.setAttribute(WebConstant.LIST_COMMENT,comment);
             request.setAttribute(WebConstant.FORM_ITEM, command);
             RequestDispatcher rd = request.getRequestDispatcher("/views/web/listenguideline/detail.jsp");
             rd.forward(request, response);
@@ -56,8 +64,13 @@ public class ListenGuidelineController extends HttpServlet {
         }
         return properties;
     }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String listenGuidelineId = request.getParameter("listenGuidelineId");
+        String email = (String) SessionUtil.getInstance().getValue(request, WebConstant.LOGIN_NAME);
+        String content = request.getParameter("content");
+        CommentDTO commentDTO = SingletonServiceUtil.getCommentServiceInstance().saveComment(email,Integer.parseInt(listenGuidelineId),content);
+        RequestDispatcher rd = request.getRequestDispatcher("/views/web/listenguideline/detail.jsp");
+        rd.forward(request, response);
     }
 }

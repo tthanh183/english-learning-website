@@ -20,6 +20,7 @@ public class UserDTO implements Serializable {
     private RoleDTO roleDTO;
     private UserImportDTO userImportDTO;
     private List<ResultDTO> results;
+    private List<CommentDTO> comments;
     public Integer getUserId() {
         return userId;
     }
@@ -114,5 +115,21 @@ public class UserDTO implements Serializable {
 
     public void setUserImportDTO(UserImportDTO userImportDTO) {
         this.userImportDTO = userImportDTO;
+    }
+
+    public List<ResultDTO> getResults() {
+        return results;
+    }
+
+    public void setResults(List<ResultDTO> results) {
+        this.results = results;
+    }
+
+    public List<CommentDTO> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<CommentDTO> comments) {
+        this.comments = comments;
     }
 }
