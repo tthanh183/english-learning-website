@@ -132,4 +132,16 @@ public class UserServiceImpl implements UserService {
             }
         }
     }
+
+    @Override
+    public Long maleCount(Map<String, Object> property, String sortExpression, String sortDirection, Integer offset, Integer limit) {
+        Object[] objects = SingletonDaoUtil.getUserDaoInstance().findByProperty(property,sortExpression,sortDirection,offset,limit," and gender = 'male'");
+        return (Long)objects[0];
+    }
+
+    @Override
+    public Long femaleCount(Map<String, Object> property, String sortExpression, String sortDirection, Integer offset, Integer limit) {
+        Object[] objects = SingletonDaoUtil.getUserDaoInstance().findByProperty(property,sortExpression,sortDirection,offset,limit,"and gender = 'female'");
+        return (Long)objects[0];
+    }
 }

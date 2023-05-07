@@ -15,4 +15,6 @@ public interface UserService {
     CheckLogin checkLogin(String email, String password);
     void validateImportUser(List<UserImportDTO> userImportDTOS);
     void saveUserImport(List<UserImportDTO> userImportDTOS);
+    Long maleCount(Map<String, Object> property, String sortExpression, String sortDirection, Integer offset, Integer limit);
+    Long femaleCount(Map<String, Object> property, String sortExpression, String sortDirection, Integer offset, Integer limit);
 }
