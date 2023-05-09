@@ -10,6 +10,7 @@
         <entry key="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/index.jsp" value="file://$PROJECT_DIR$/PBL3-web/src/main/webapp" />
         <entry key="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/views/admin/listenguideline/edit.jsp" value="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/views/admin/listenguideline" />
         <entry key="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/views/admin/listenguideline/list.jsp" value="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/views/admin/listenguideline" />
+        <entry key="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/views/web/user/information.jsp" value="file://$PROJECT_DIR$/PBL3-web/src/main/webapp/views/web/user" />
       </map>
     </option>
   </component>

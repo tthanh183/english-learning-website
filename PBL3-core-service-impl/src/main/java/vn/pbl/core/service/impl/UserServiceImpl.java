@@ -144,4 +144,11 @@ public class UserServiceImpl implements UserService {
         Object[] objects = SingletonDaoUtil.getUserDaoInstance().findByProperty(property,sortExpression,sortDirection,offset,limit,"and gender = 'female'");
         return (Long)objects[0];
     }
+
+    @Override
+    public UserDTO findEqualUnique(String property, Object value) {
+        UserEntity entity = SingletonDaoUtil.getUserDaoInstance().findEqualUnique(property,value);
+        UserDTO dto = UserBeanUtil.entity2Dto(entity);
+        return dto;
+    }
 }

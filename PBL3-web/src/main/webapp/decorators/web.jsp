@@ -21,5 +21,28 @@
     <dec:body/>
 </div>
 <%@ include file="/common/web/footer.jsp" %>
+<script>
+    var container = document.getElementById("avatarContainer");
+    var list = document.getElementById("myList");
+
+    container.addEventListener("click", function() {
+        if (list.style.display === "none") {
+            list.style.display = "block";
+        } else {
+            list.style.display = "none";
+        }
+    });
+    var notificationContainer = document.getElementById("notificationContainer");
+    var notificationList = document.getElementById("notificationList");
+
+    notificationContainer.addEventListener("click", function() {
+        if (notificationList.style.display === "none") {
+            notificationList.style.display = "block";
+        } else {
+            notificationList.style.display = "none";
+        }
+    });
+
+</script>
 </body>
 </html>

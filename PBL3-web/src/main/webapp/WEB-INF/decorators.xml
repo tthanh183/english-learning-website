@@ -24,4 +24,8 @@
     <decorator name="product" page="product.jsp">
         <pattern>/bai-thi*</pattern>
     </decorator>
+    <decorator name="information" page="product.jsp">
+        <pattern>/user*</pattern>
+    </decorator>
+
 </decorators>

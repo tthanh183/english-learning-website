@@ -14,7 +14,7 @@
                         <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
                         <div class="nav-collapse collapse navbar-responsive-collapse">
                             <ul class="nav">
-                                <li class="active"><a href="index.html">Home</a></li>
+                                <li class="active"><a href="/home.html">Home</a></li>
 
                                 <li class="dropdown">
                                     <a href="about.html" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
@@ -24,14 +24,40 @@
                                         <li><a href="about.html">Team</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="service.html">Services</a></li>
                                 <c:if test="${not empty login_name}">
-                                    <li>Xin chao: ${login_name}</li>
-                                    <c:url var="logoutUrl" value="/logout.html">
-                                        <c:param name="action" value="logout"/>
-                                    </c:url>
-                                    <li><a href="${logoutUrl}"><fmt:message key="label.logout" bundle="${lang}"/></a></li>
+                                    <li>
+                                        <div id="notificationContainer" style="position: relative;">
+                                            <img src="/template/image/notification.png" alt="Avatar" class="img-circle" width="40px" height="40px" style="margin-right: 10px;">
+                                            <ul id="notificationList" class="dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0;">
+                                                <li><a href="#">Notification 1</a></li>
+                                                <li><a href="#">Notification 2</a></li>
+                                                <li><a href="#">Notification 3</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div id="avatarContainer" style="position: relative;">
+                                            <img src="/template/image/avatar.png" alt="Avatar" class="img-circle" width="40px" height="40px" >
+                                            <ul id="myList" class="dropdown-menu" style="display: none;position: absolute; top: 100%; right: 0;">
+                                                <li><a href="/user-information.html"><fmt:message key="label.information" bundle="${lang}"/></a></li>
+                                                <li><a href="#"><fmt:message key="label.result" bundle="${lang}"/></a></li>
+                                                <c:url var="logoutUrl" value="/logout.html">
+                                                    <c:param name="action" value="logout"/>
+                                                </c:url>
+                                                <li><a href="${logoutUrl}"><fmt:message key="label.logout" bundle="${lang}"/></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
                                 </c:if>
+
+<%--                                <c:if test="${not empty login_name}">--%>
+<%--                                    <li>Xin chao: ${login_name}</li>--%>
+<%--                                    <c:url var="logoutUrl" value="/logout.html">--%>
+<%--                                        <c:param name="action" value="logout"/>--%>
+<%--                                    </c:url>--%>
+<%--                                    <li><a href="${logoutUrl}"><fmt:message key="label.logout" bundle="${lang}"/></a></li>--%>
+<%--                                </c:if>--%>
                                 <c:if test="${empty login_name}">
                                     <c:url var="loginUrl" value="/login.html">
                                         <c:param name="action" value="login"/>

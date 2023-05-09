@@ -8,9 +8,8 @@
 
 </head>
 <body>
-    <p2>aaa</p2>
     <div class="container">
-        <canvas id="myChart"></canvas>
+        <canvas id="myChart"style="max-width: 600px; max-height: 400px;"></canvas>
     </div>
     <script>
         let myChart = document.getElementById('myChart').getContext('2d');
@@ -25,7 +24,7 @@
             data:{
                 labels:['Giới tính nam', 'Giới tính nữ'],
                 datasets:[{
-                    label:'Population',
+                    label:'Giới tính',
                     data:[
                         ${maleCount},
                         ${femaleCount}
@@ -34,11 +33,6 @@
                     backgroundColor:[
                         'rgba(255, 99, 132, 0.6)',
                         'rgba(54, 162, 235, 0.6)',
-                        // 'rgba(255, 206, 86, 0.6)',
-                        // 'rgba(75, 192, 192, 0.6)',
-                        // 'rgba(153, 102, 255, 0.6)',
-                        // 'rgba(255, 159, 64, 0.6)',
-                        // 'rgba(255, 99, 132, 0.6)'
                     ],
                     borderWidth:1,
                     borderColor:'#777',
@@ -47,10 +41,13 @@
                 }]
             },
             options:{
-                title:{
-                    display:true,
-                    text:'Biểu đồ cột người dùng theo độ tuổi',
-                    fontSize:30
+                plugin:{
+                    title:{
+                        display:true,
+                        position:'right',
+                        text:'Biểu đồ cột người dùng theo độ tuổi',
+                        fontSize:30
+                    }
                 },
                 legend:{
                     display:true,
@@ -61,10 +58,10 @@
                 },
                 layout:{
                     padding:{
-                        left:50,
+                        left:100,
                         right:0,
                         bottom:0,
-                        top:0
+                        top:100
                     }
                 },
                 tooltips:{

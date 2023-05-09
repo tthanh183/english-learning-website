@@ -17,4 +17,5 @@ public interface UserService {
     void saveUserImport(List<UserImportDTO> userImportDTOS);
     Long maleCount(Map<String, Object> property, String sortExpression, String sortDirection, Integer offset, Integer limit);
     Long femaleCount(Map<String, Object> property, String sortExpression, String sortDirection, Integer offset, Integer limit);
+    UserDTO findEqualUnique(String property, Object value);
 }
