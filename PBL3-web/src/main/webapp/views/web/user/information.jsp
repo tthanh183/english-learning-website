@@ -131,9 +131,8 @@
 
         <label for="gender"><fmt:message key="label.gender" bundle="${lang}"/></label>
         <select id="gender" name="gender" required >
-            <option value="${item.pojo.gender}"></option>
-            <option value="male">Nam</option>
-            <option value="female">Nữ</option>
+            <option value="male" ${item.pojo.gender == 'male' ? 'selected' : ''}>Male</option>
+            <option value="female" ${item.pojo.gender == 'female' ? 'selected' : ''}>Female</option>
         </select><br>
 
         <label for="address"><fmt:message key="label.address" bundle="${lang}"/></label>

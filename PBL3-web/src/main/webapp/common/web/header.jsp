@@ -41,7 +41,7 @@
                                             <img src="/template/image/avatar.png" alt="Avatar" class="img-circle" width="40px" height="40px" >
                                             <ul id="myList" class="dropdown-menu" style="display: none;position: absolute; top: 100%; right: 0;">
                                                 <li><a href="/user-information.html"><fmt:message key="label.information" bundle="${lang}"/></a></li>
-                                                <li><a href="#"><fmt:message key="label.result" bundle="${lang}"/></a></li>
+                                                <li><a href="/user-result.html"><fmt:message key="label.result" bundle="${lang}"/></a></li>
                                                 <c:url var="logoutUrl" value="/logout.html">
                                                     <c:param name="action" value="logout"/>
                                                 </c:url>

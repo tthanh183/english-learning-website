@@ -122,7 +122,7 @@
                             </fmt:bundle>
                         </div>
                         <input type="hidden" name="urlType" id="urlType" value="url_list"/>
-                        <input type="hidden" name="crudaction" id="crudaction"/>>
+                        <input type="hidden" name="crudaction" id="crudaction"/>
                     </form>
                 </div>
             </div>
