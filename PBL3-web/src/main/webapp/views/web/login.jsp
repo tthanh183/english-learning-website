@@ -5,15 +5,74 @@
 <html>
 <head>
     <title>Login Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            background: url('/template/web/img/background-moutain.jpg') no-repeat;
+            background-size: cover;
+            background-position: center;
+
+        }
+        .header {
+            margin-bottom: 0;
+        }
+        .login-layout .widget-box .widget-main {
+            padding: 16px 36px 36px;
+            position: relative;
+            width: 360px;
+            height: 300px;
+            border: 2px solid rgba(255,255,255,.5);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 30px rgba(0,0,0,.5);
+        }
+        label.block.clearfix {
+            padding-top: 8px;
+        }
+        .login-register {
+            font-size: 0.9em;
+            color: #162938;
+            text-align: center;
+            font-weight: 500;
+            margin: 25px 0 10px;
+        }
+
+        .login-register p a {
+            color: #162938;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .login-register p a:hover {
+            text-decoration: underline;
+        }
+        .btn {
+            position: relative;
+            width: 100%;
+            height: 45px;
+            background: #162938;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.4em;
+            color: #fff;
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
-    <div id="login-box" class="login-box visible widget-box no-border">
-        <div class="widget-body">
+    <div id="login-box" class="login-box visible widget-box no-border" style="background: transparent; margin-top: 60px; border-radius: 60px; ">
+        <div class="widget-body" style="background: transparent;">
             <div class="widget-main">
-                <h4 class="header blue lighter bigger">
+                <h3 class="header blue lighter bigger">
                     <i class="ace-icon fa fa-coffee green"></i>
                     <fmt:message key="label.test" bundle="${lang}"/>
-                </h4>
+                </h3>
 
                 <div class="space-6"></div>
 
@@ -44,13 +103,17 @@
                         <div class="space"></div>
 
                         <div class="clearfix">
-                            <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
-                                <i class="ace-icon fa fa-key"></i>
-                                <span class="bigger-110">Login</span>
+                            <button type="submit" class="btn">
+                                Login
                             </button>
                         </div>
 
+
                         <div class="space-4"></div>
+
+                        <div class="login-register">
+                            <p>Don't have a account? <a href="#" class="register-link">Register</a></p>
+                        </div>
                     </fieldset>
                 </form>
             </div><!-- /.widget-main -->

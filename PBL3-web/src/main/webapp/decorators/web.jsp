@@ -5,14 +5,17 @@
     <title><fmt:message key="label.home" bundle="${lang}"/> </title>
     <!-- Bootstrap -->
     <link href="<c:url value="/template/web/css/bootstrap.css"/>" rel="stylesheet">
-    <link href="<c:url value="/template/web/css/bootstrap-responsive.css"/>" rel="stylesheet">
     <link href="<c:url value="/template/web/css/style.css"/>" rel="stylesheet">
+    <link href="<c:url value="/template/web/css/bootstrap-responsive.css"/>" rel="stylesheet">
     <!--Font-->
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600' rel='stylesheet' type='text/css'>
     <!-- SCRIPT
     ============================================================-->
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="<c:url value="/template/web/js/bootstrap.min.js"/>"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <dec:head />
 </head>
 <body>

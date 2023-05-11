@@ -24,7 +24,6 @@
 }
 
 .hide-text {
-  font: 0/0 a;
   color: transparent;
   text-shadow: none;
   background-color: transparent;
@@ -2946,7 +2945,7 @@ table th[class*="span"],
 
 .dropdown-menu > li > a {
   display: block;
-  padding: 3px 20px;
+  padding: 6px 20px;
   clear: both;
   font-weight: normal;
   line-height: 20px;
@@ -4746,7 +4745,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav li.dropdown.active > .dropdown-toggle,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
   color: #555555;
-  background-color: #e5e5e5;
+  background-color: transparent;
 }
 
 .navbar .nav li.dropdown > .dropdown-toggle .caret {
@@ -6164,4 +6163,12 @@ a.badge:focus {
 
 .affix {
   position: fixed;
+}
+
+.navbar .navbar-inner ul.nav button.notification {
+  margin: 8px 50px 0 40px;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  font-size: 1.6rem;
 }

@@ -27,7 +27,7 @@
 
                     </div>
 
-                    <div class="span6"> <img src="img/slide/slide1.jpg"></div>
+                    <div class="span6"> <img src="/template/web/img/slide/slide6.png"></div>
 
                 </div>
             </div>
@@ -52,7 +52,7 @@
 
                     </div>
 
-                    <div class="span6"> <img src="img/slide/slide2.jpg"></div>
+                    <div class="span6"> <img src="/template/web/img/slide/slide2.jpg"></div>
 
                 </div>
             </div>

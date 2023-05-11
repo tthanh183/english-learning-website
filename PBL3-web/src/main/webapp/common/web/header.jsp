@@ -4,11 +4,11 @@
     <div class="container">
         <div class="row">
             <!--LOGO-->
-            <div class="span3"><a class="brand" href="#"><img src="img/logo.png"/></a></div>
+            <div class="span2"><a class="brand" href="#"><img src="/template/web/img/toeic-logo.png"/></a></div>
             <!-- /LOGO -->
 
             <!-- MAIN NAVIGATION -->
-            <div class="span9">
+            <div class="span10">
                 <div class="navbar  pull-right">
                     <div class="navbar-inner">
                         <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
@@ -24,10 +24,11 @@
                                         <li><a href="about.html">Team</a></li>
                                     </ul>
                                 </li>
+                                <li class="regis"><a href="/register.html">Registration</a></li>
                                 <c:if test="${not empty login_name}">
                                     <li>
                                         <div id="notificationContainer" style="position: relative;">
-                                            <img src="/image/notification.png" alt="Avatar" class="img-circle" width="40px" height="40px" style="margin-right: 10px;">
+                                            <button alt="Avatar" class="notification"><ion-icon name="notifications"></ion-icon></button>
                                             <ul id="notificationList" class="dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0;">
                                                 <li><a href="#">Notification 1</a></li>
                                                 <li><a href="#">Notification 2</a></li>
@@ -37,7 +38,7 @@
                                     </li>
 
                                     <li>
-                                        <div id="avatarContainer" style="position: relative;">
+                                        <div id="avatarContainer" style="position: relative; cursor: pointer;">
                                             <img src="/image/avatar.png" alt="Avatar" class="img-circle" width="40px" height="40px" >
                                             <ul id="myList" class="dropdown-menu" style="display: none;position: absolute; top: 100%; right: 0;">
                                                 <li><a href="/user-information.html"><fmt:message key="label.information" bundle="${lang}"/></a></li>
@@ -51,13 +52,13 @@
                                     </li>
                                 </c:if>
 
-<%--                                <c:if test="${not empty login_name}">--%>
-<%--                                    <li>Xin chao: ${login_name}</li>--%>
-<%--                                    <c:url var="logoutUrl" value="/logout.html">--%>
-<%--                                        <c:param name="action" value="logout"/>--%>
-<%--                                    </c:url>--%>
-<%--                                    <li><a href="${logoutUrl}"><fmt:message key="label.logout" bundle="${lang}"/></a></li>--%>
-<%--                                </c:if>--%>
+                                <%--                                <c:if test="${not empty login_name}">--%>
+                                <%--                                    <li>Xin chao: ${login_name}</li>--%>
+                                <%--                                    <c:url var="logoutUrl" value="/logout.html">--%>
+                                <%--                                        <c:param name="action" value="logout"/>--%>
+                                <%--                                    </c:url>--%>
+                                <%--                                    <li><a href="${logoutUrl}"><fmt:message key="label.logout" bundle="${lang}"/></a></li>--%>
+                                <%--                                </c:if>--%>
                                 <c:if test="${empty login_name}">
                                     <c:url var="loginUrl" value="/login.html">
                                         <c:param name="action" value="login"/>

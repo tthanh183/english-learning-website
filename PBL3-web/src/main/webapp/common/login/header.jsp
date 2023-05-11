@@ -1,9 +1,8 @@
 <div class="center">
     <h1>
         <i class="ace-icon fa fa-leaf green"></i>
-        <span class="red">Ace</span>
-        <span class="white" id="id-text2">Application</span>
+        <span class="white" id="id-text2">Toeic Online</span>
     </h1>
-    <h4 class="blue" id="id-company-text">&copy; Company Name</h4>
+    <h2 class="blue" id="id-company-text">Login</h2>
 </div>
 <div class="space-6"></div>
