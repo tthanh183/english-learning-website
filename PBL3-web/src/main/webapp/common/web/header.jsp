@@ -27,7 +27,7 @@
                                 <c:if test="${not empty login_name}">
                                     <li>
                                         <div id="notificationContainer" style="position: relative;">
-                                            <img src="/template/image/notification.png" alt="Avatar" class="img-circle" width="40px" height="40px" style="margin-right: 10px;">
+                                            <img src="/image/notification.png" alt="Avatar" class="img-circle" width="40px" height="40px" style="margin-right: 10px;">
                                             <ul id="notificationList" class="dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0;">
                                                 <li><a href="#">Notification 1</a></li>
                                                 <li><a href="#">Notification 2</a></li>
@@ -38,7 +38,7 @@
 
                                     <li>
                                         <div id="avatarContainer" style="position: relative;">
-                                            <img src="/template/image/avatar.png" alt="Avatar" class="img-circle" width="40px" height="40px" >
+                                            <img src="/image/avatar.png" alt="Avatar" class="img-circle" width="40px" height="40px" >
                                             <ul id="myList" class="dropdown-menu" style="display: none;position: absolute; top: 100%; right: 0;">
                                                 <li><a href="/user-information.html"><fmt:message key="label.information" bundle="${lang}"/></a></li>
                                                 <li><a href="/user-result.html"><fmt:message key="label.result" bundle="${lang}"/></a></li>

@@ -13,7 +13,9 @@
         <mapping class="vn.pbl.core.persistence.entity.RoleEntity"/>
         <mapping class="vn.pbl.core.persistence.entity.UserEntity"/>
         <mapping class="vn.pbl.core.persistence.entity.CommentEntity"/>
+        <mapping class="vn.pbl.core.persistence.entity.CommentReadEntity"/>
         <mapping class="vn.pbl.core.persistence.entity.ListenGuidelineEntity"/>
+        <mapping class="vn.pbl.core.persistence.entity.ReadGuidelineEntity"/>
         <mapping class="vn.pbl.core.persistence.entity.ExaminationEntity"/>
         <mapping class="vn.pbl.core.persistence.entity.ExaminationQuestionEntity"/>
         <mapping class="vn.pbl.core.persistence.entity.ExerciseEntity"/>

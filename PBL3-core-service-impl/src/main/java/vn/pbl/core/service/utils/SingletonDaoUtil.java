@@ -10,7 +10,9 @@ public class SingletonDaoUtil {
     private static UserDaoImpl userDaoImpl = null;
     private static RoleDaoImpl roleDaoImpl = null;
     private static ListenGuidelineDaoImpl listenGuidelineDaoImpl = null;
+    private static ReadGuidelineDaoImpl readGuidelineDaoImpl = null;
     private static CommentDaoImpl commentDaoImpl = null;
+    private static CommentReadDaoImpl commentReadDaoImpl = null;
     private static ExaminationDaoImpl examinationDaoImpl = null;
     private static ExaminationQuestionDaoImpl examinationQuestionDaoImpl = null;
     private static ExerciseDaoImpl exerciseDaoImpl = null;
@@ -35,11 +37,23 @@ public class SingletonDaoUtil {
         }
         return  listenGuidelineDaoImpl;
     }
+    public static ReadGuidelineDaoImpl getReadGuidelineDaoInstance() {
+        if(readGuidelineDaoImpl == null) {
+            readGuidelineDaoImpl = new ReadGuidelineDaoImpl();
+        }
+        return readGuidelineDaoImpl;
+    }
     public static CommentDaoImpl getCommentDaoInstance() {
         if (commentDaoImpl == null) {
             commentDaoImpl = new CommentDaoImpl();
         }
         return commentDaoImpl;
+    }
+    public static CommentReadDaoImpl getCommentReadDaoInstance() {
+        if (commentReadDaoImpl == null) {
+            commentReadDaoImpl = new CommentReadDaoImpl();
+        }
+        return commentReadDaoImpl;
     }
 
     public static ExaminationDaoImpl getExaminationDaoInstance() {

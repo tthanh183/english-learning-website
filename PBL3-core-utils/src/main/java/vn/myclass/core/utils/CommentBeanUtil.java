@@ -15,9 +15,9 @@ public class CommentBeanUtil {
     }
     public static CommentEntity dto2Entity(CommentDTO dto) {
         CommentEntity entity = new CommentEntity();
-        entity.setCommentId(entity.getCommentId());
-        entity.setContent(entity.getContent());
-        entity.setCreatedDate(entity.getCreatedDate());
+        entity.setCommentId(dto.getCommentId());
+        entity.setContent(dto.getContent());
+        entity.setCreatedDate(dto.getCreatedDate());
         return entity;
     }
 }

@@ -8,14 +8,13 @@
 <div class="table-responsive">
     <fmt:bundle basename="ResourcesBundle">
         <display:table id="tableList" name="items.listResult" partialList="true" size="${items.totalItems}"
-                       pagesize="${items.maxPageItems}" sort="external" requestURI="${requestUrl}" export="true"
+                       pagesize="${items.maxPageItems}" requestURI="${requestUrl}" export="true"
                        class="table table-fcv-ace table-striped table-bordered table-hover dataTable no-footer"
                        style="margin: 3em 0 1.5em;">
-            <display:column value="${name}" titleKey="label.user.name" sortable="true" sortName="title"/>
             <display:column property="examination.examinationId" titleKey="label.examination.name" sortable="true" sortName="title"/>
             <display:column property="listenScore" titleKey="label.listen.score" sortable="true" sortName="content"/>
             <display:column property="readingScore" titleKey="label.read.score" sortable="true" sortName="content"/>
-            <display:column property="createdDate" titleKey="lable.result.day" sortable="true" sortName="content"/>
+            <display:column property="createdDate" titleKey="lable.result.day" sortable="true" sortName="createdDate" defaultorder="ascending"/>
         </display:table>
     </fmt:bundle>
 </div>

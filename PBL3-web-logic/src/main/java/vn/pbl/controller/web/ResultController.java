@@ -31,7 +31,6 @@ public class ResultController extends HttpServlet {
         resultCommand.setListResult((List<ResultDTO>) objects[1]);
         resultCommand.setTotalItems(Integer.parseInt(objects[0].toString()));
         request.setAttribute(WebConstant.LIST_ITEMS,resultCommand);
-        request.setAttribute("name", userDTO.getName());
         RequestDispatcher rd = request.getRequestDispatcher("views/web/user/result.jsp");
         rd.forward(request, response);
     }

@@ -46,6 +46,8 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY)
     private List<CommentEntity> commentEntityList;
+    @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY)
+    private List<CommentReadEntity> commentReadEntityList;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<ResultEntity> results;
@@ -160,5 +162,13 @@ public class UserEntity {
 
     public void setResults(List<ResultEntity> results) {
         this.results = results;
+    }
+
+    public List<CommentReadEntity> getCommentReadEntityList() {
+        return commentReadEntityList;
+    }
+
+    public void setCommentReadEntityList(List<CommentReadEntity> commentReadEntityList) {
+        this.commentReadEntityList = commentReadEntityList;
     }
 }

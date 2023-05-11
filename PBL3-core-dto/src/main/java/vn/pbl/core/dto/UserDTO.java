@@ -21,6 +21,7 @@ public class UserDTO implements Serializable {
     private UserImportDTO userImportDTO;
     private List<ResultDTO> results;
     private List<CommentDTO> comments;
+    private List<CommentReadDTO> commentReads;
     public Integer getUserId() {
         return userId;
     }
@@ -131,5 +132,13 @@ public class UserDTO implements Serializable {
 
     public void setComments(List<CommentDTO> comments) {
         this.comments = comments;
+    }
+
+    public List<CommentReadDTO> getCommentReads() {
+        return commentReads;
+    }
+
+    public void setCommentReads(List<CommentReadDTO> commentReads) {
+        this.commentReads = commentReads;
     }
 }

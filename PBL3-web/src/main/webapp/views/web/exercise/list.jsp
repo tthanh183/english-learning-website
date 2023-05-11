@@ -33,7 +33,7 @@
                                 <c:param name="exerciseId" value="${item.exerciseId}"/>
                                 <c:param name="page" value="1"/>
                             </c:url>
-                            <h4><span><a href="${detailUrl}">Làm bài tập nghe</a></span></h4>
+                            <h4><span><a href="${detailUrl}">Làm bài tập</a></span></h4>
                         </div>
                     </div>
                 </c:forEach>

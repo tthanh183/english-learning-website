@@ -4,6 +4,9 @@
 <c:url value="/admin-guideline-listen-list.html" var="listenGuidelineListUrl">
     <c:param name="urlType" value="url_list"/>
 </c:url>
+<c:url value="/admin-guideline-read-list.html" var="readGuidelineListUrl">
+    <c:param name="urlType" value="url_list"/>
+</c:url>
 <c:url value="/admin-user-list.html" var="userListUrl">
     <c:param name="urlType" value="url_list"/>
 </c:url>
@@ -70,7 +73,7 @@
             <b class="arrow"></b>
             <ul class="submenu">
                 <li class="">
-                    <a href="${listenGuidelineListUrl}">
+                    <a href="${readGuidelineListUrl}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         <fmt:message key="label.guideline.read.list" bundle="${lang}"/>
                     </a>

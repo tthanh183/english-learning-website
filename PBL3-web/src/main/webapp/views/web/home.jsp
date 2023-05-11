@@ -80,42 +80,61 @@
 
 <div class="row feature-box">
     <div class="span12 cnt-title">
-        <h1>At vero eos et accusamus et iusto odio dignissimos</h1>
-        <span>Contrary to popular belief, Lorem Ipsum is not simply random text.</span>
+        <h1><fmt:message key="label.guideline" bundle="${lang}"/></h1>
+        <span>Hướng dẫn cách làm các dạng bài nghe và đọc</span>
     </div>
-
+    <div class="span4"><img src="image/guide.png"height="350px" width="350px"></div>
     <div class="span4">
-        <img src="img/icon3.png">
+        <img src="image/listening_guideline.png" height="150px" width="150px">
         <h2><fmt:message key="label.guideline.listen" bundle="${lang}"/></h2>
         <p>
-            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            Hướng dẫn cách làm các dạng bài nghe
         </p>
-        <a href="<c:url value="/danh-sach-huong-dan-nghe.html"/>">Read More &rarr;</a>
+        <a href="<c:url value="/danh-sach-huong-dan-nghe.html"/>">Chi tiết &rarr;</a>
     </div>
 
     <div class="span4">
-        <img src="img/icon2.png">
-        <h2><fmt:message key="label.exercise" bundle="${lang}"/></h2>
+        <img src="image/reading_guideline.png" height="150px" width="150px">
+        <h2><fmt:message key="label.guideline.read" bundle="${lang}"/></h2>
         <p>
-            Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua.
+            Hướng dẫn cách làm các dạng bài đọc
+        </p>
+        <a href="<c:url value="/danh-sach-huong-dan-doc.html"/>">Chi tiết &rarr;</a>
+    </div>
+
+</div>
+
+<div class="hr-divider"></div>
+
+<div class="row feature-box">
+    <div class="span12 cnt-title">
+        <h1><fmt:message key="label.exercise" bundle="${lang}"/></h1>
+        <span>Các bài luyện tập</span>
+    </div>
+    <div class="span4"><img src="image/exercise.png"height="350px" width="350px"></div>
+    <div class="span4">
+        <img src="image/exercise_listen.png"height="150px" width="150px">
+        <h2><fmt:message key="label.exercise.listen" bundle="${lang}"/></h2>
+        <p>
+            Các bài luyện tập nghe
         </p>
         <c:url var="listExercise" value="/danh-sach-bai-tap.html">
             <c:param name="pojo.type" value="listening"/>
         </c:url>
-        <a href="${listExercise}">Read More &rarr;</a>
+        <a href="${listExercise}">Chi tiết &rarr;</a>
     </div>
-
     <div class="span4">
-        <img src="img/icon1.png">
-        <h2><fmt:message key="label.examination" bundle="${lang}"/></h2>
+        <img src="image/exercise_read.png"height="150px" width="150px">
+        <h2><fmt:message key="label.exercise.read" bundle="${lang}"/></h2>
         <p>
-            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+            Các bài luyện tập đọc
         </p>
-        <a href="<c:url value="/danh-sach-bai-thi.html"/>">Read More &rarr;</a>
+        <c:url var="listExercise" value="/danh-sach-bai-tap.html">
+            <c:param name="pojo.type" value="reading"/>
+        </c:url>
+        <a href="${listExercise}">Chi tiết &rarr;</a>
     </div>
 </div>
-
 
 <!-- /.Feature -->
 
@@ -125,14 +144,22 @@
 
 
 <div class="row">
-    <div class="span6"><img src="img/responsive.png"></div>
-
-    <div class="span6">
-        <img class="hidden-phone" src="img/icon4.png" alt="">
-        <h1>Fully Responsive</h1>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-        <a href="#">Read More &rarr;</a>
+    <div class="span12 cnt-title">
+        <h1><fmt:message key="label.exam" bundle="${lang}"/></h1>
+        <span>Yêu cầu đăng nhập</span>
     </div>
+
+    <div class="span6"><img src="image/online_exam.png"height="350px" width="350px"></div>
+
+    <div class="span4">
+        <img src="image/examination.png"height="150px" width="150px">
+        <h2><fmt:message key="label.examination" bundle="${lang}"/></h2>
+        <p>
+            Làm bài kiểm tra trực tuyến
+        </p>
+        <a href="<c:url value="/danh-sach-bai-thi.html"/>">Chi tiết &rarr;</a>
+    </div>
+
 </div>
 
 

@@ -4,13 +4,16 @@ import vn.pbl.core.daoimpl.ListenGuidelineDaoImpl;
 import vn.pbl.core.daoimpl.RoleDaoImpl;
 import vn.pbl.core.daoimpl.UserDaoImpl;
 import vn.pbl.core.service.ListenGuidelineService;
+import vn.pbl.core.service.ReadGuidelineService;
 import vn.pbl.core.service.impl.*;
 
 public class SingletonServiceUtil {
     private static UserServiceImpl userServiceImpl = null;
     private static RoleServiceImpl roleServiceImpl = null;
     private static ListenGuidelineServiceImpl listenGuidelineServiceImpl = null;
+    private static ReadGuidelineServiceImpl readGuidelineServiceImpl = null;
     private static CommentServiceImpl commentServiceImpl = null;
+    private static CommentReadServiceImpl commentReadServiceImpl = null;
     private static ExaminationQuestionServiceImpl examinationQuestionServiceImpl = null;
     private static ExaminationServiceImpl examinationServiceImpl = null;
     private static ExerciseQuestionServiceImpl exerciseQuestionServiceImpl = null;
@@ -35,11 +38,23 @@ public class SingletonServiceUtil {
         }
         return  listenGuidelineServiceImpl;
     }
+    public static ReadGuidelineServiceImpl getReadGuidelineServiceInstance() {
+        if(readGuidelineServiceImpl == null) {
+            readGuidelineServiceImpl = new ReadGuidelineServiceImpl();
+        }
+        return readGuidelineServiceImpl;
+    }
     public static CommentServiceImpl getCommentServiceInstance() {
         if (commentServiceImpl == null) {
             commentServiceImpl = new CommentServiceImpl();
         }
         return commentServiceImpl;
+    }
+    public static CommentReadServiceImpl getCommentReadServiceInstance() {
+        if (commentReadServiceImpl == null) {
+            commentReadServiceImpl = new CommentReadServiceImpl();
+        }
+        return commentReadServiceImpl;
     }
 
     public static ExaminationQuestionServiceImpl getExaminationQuestionServiceInstance() {
