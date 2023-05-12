@@ -13,30 +13,38 @@
 <div class="wrapper">
   <div class="form-box register ">
     <h2>Registration</h2>
-    <form action="#">
+    <c:if test="${not empty messageResponse}">
+      <div class="alert alert-block alert-${alert}">
+        <button type="button" class="close" data-dismiss="alert">
+          <i class="ace-icon fa fa-times"></i>
+        </button>
+          ${messageResponse}
+      </div>
+    </c:if>
+    <form action="/registration.html" method="post">
       <div class="input-box">
         <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-        <input type="text" name="" id="" required>
-        <label for="">Username</label>
+        <input type="text" name="name" id="name" required>
+        <label>Username</label>
       </div>
       <div class="input-box">
         <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-        <input type="email" name=""  required>
-        <label for="">Email</label>
+        <input type="email" name="email"  required>
+        <label>Email</label>
       </div>
       <div class="input-box">
         <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-        <input type="password" name=""  required>
-        <label for="">Password</label>
+        <input type="password" name="password"  required>
+        <label>Password</label>
       </div>
       <div class="remember-forgot">
-        <label for="">
+        <label>
           <input type="checkbox">I agree to the terms & conditions
         </label>
       </div>
       <button type="submit" class="btn">Register</button>
       <div class="login-register">
-        <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+        <p>Already have an account? <a href="/login.html" class="login-link">Login</a></p>
       </div>
     </form>
   </div>

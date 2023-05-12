@@ -24,7 +24,7 @@
                                         <li><a href="about.html">Team</a></li>
                                     </ul>
                                 </li>
-                                <li class="regis"><a href="/register.html">Registration</a></li>
+                                <li class="regis"><a href="/registration.html"><fmt:message key="label.registration" bundle="${lang}"/></a></li>
                                 <c:if test="${not empty login_name}">
                                     <li>
                                         <div id="notificationContainer" style="position: relative;">
