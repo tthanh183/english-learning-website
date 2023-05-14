@@ -8,35 +8,9 @@
     <title>Thông tin người dùng</title>
     <meta charset="utf-8">
     <style>
-        .tab {
-            overflow: hidden;
-            border: 1px solid #006dcc;
-            background-color: #006dcc;
-        }
-
-        .tab button {
-            background-color: inherit;
-            float: left;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 14px 16px;
-            transition: 0.3s;
-        }
 
         .tab button:hover {
             background-color: #006dcc;
-        }
-
-        .tab button.active {
-            background-color:#006dcc;
-        }
-
-        .tabcontent {
-            display: none;
-            padding: 6px 12px;
-            border: 1px solid #006dcc;
-            border-top: none;
         }
         /* Style cho tab */
         .tab {
@@ -72,13 +46,16 @@
 
         /* Style cho form */
         form {
-            background-color: #f1f1f1;
+            background-color: transparent;
             padding: 20px;
-            border: 1px solid #ccc;
             margin-top: 20px;
             width: 50%;
             margin-left: auto;
             margin-right: auto;
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255,255,255,.5);
+            box-shadow: 0 0 30px rgba(0,0,0,.5);
         }
 
         /* Style cho các label */
@@ -90,11 +67,33 @@
         /* Style cho input */
         input[type=text], input[type=password] {
             width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
+            padding: 8px 8px;
+            margin: 0px 0px 12px;
             display: inline-block;
             border: 1px solid #ccc;
             box-sizing: border-box;
+            border-radius: 6px;
+        }
+        select#gender {
+            margin-bottom: 12px;
+        }
+        input[type=number], input[type=tel] {
+            margin-bottom: 12px;
+            border-radius: 6px;
+        }
+        input[type="submit"] {
+            margin-top: 12px;
+            width: 100%;
+            height: 40px;
+            background: #f5f5f5;
+            color: #000;
+            font-size: 1.2em;
+            font-weight: 500;
+            border-radius: 16px;
+            opacity: 0.9;
+        }
+        input[type="submit"]:hover {
+            opacity: 1;
         }
 
         /* Style cho button */
@@ -112,6 +111,16 @@
         button:hover {
             opacity: 0.8;
         }
+        #myForm label {
+            color: #000;
+            font-weight: 500;
+            margin-bottom: 4px;
+            font-size: 1.1em;
+        }
+        div#contact-info {
+            background: linear-gradient(185.46deg, #A293EC 23.92%, #5F67EC 112.43%);
+        }
+
     </style>
 </head>
 <body>
@@ -121,7 +130,7 @@
 </div>
 
 <div id="contact-info" class="tabcontent">
-    <a><fmt:message key="label.information" bundle="${lang}"/></a>
+    <a style="font-size: 1.4em; font-weight: 600; "><fmt:message key="label.information" bundle="${lang}"/></a>
     <form id="myForm" action="${editUserUrl}" method="post" >
         <label for="name"><fmt:message key="label.name" bundle="${lang}"/></label>
         <input type="text" id="name" name="name" required value="${item.pojo.name}"><br>

@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="<c:url value='/template/admin/assets/css/ace.min.css'/>" class="ace-main-stylesheet" id="main-ace-style" />
     <!-- ace settings handler -->
     <script src="<c:url value='/template/admin/assets/js/ace-extra.min.js'/>"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <dec:head/>
 </head>
 <body class="login-layout">

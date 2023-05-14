@@ -45,8 +45,8 @@
     </div>
     <ul class="nav nav-list">
         <li class="">
-            <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-list"></i>
+            <a href="#" class="dropdown-toggle" style="font-size: 1.2em;">
+                <i class="fa fa-headphones" aria-hidden="true"></i>
                 <span class="menu-text"></span>
                 <fmt:message key="label.guideline.listen" bundle="${lang}"/>
                 <b class="arrow fa fa-angle-down"></b>
@@ -54,7 +54,7 @@
             <b class="arrow"></b>
             <ul class="submenu">
                 <li class="">
-                    <a href="${listenGuidelineListUrl}">
+                    <a href="${listenGuidelineListUrl}" style="font-size: 1.2em;">
                         <i class="menu-icon fa fa-caret-right"></i>
                         <fmt:message key="label.guideline.listen.list" bundle="${lang}"/>
                     </a>
@@ -64,8 +64,8 @@
         </li>
 
         <li class="">
-            <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-list"></i>
+            <a href="#" class="dropdown-toggle" style="font-size: 1.2em;">
+                <i class="fa fa-book" aria-hidden="true"></i>
                 <span class="menu-text"></span>
                 <fmt:message key="label.guideline.read" bundle="${lang}"/>
                 <b class="arrow fa fa-angle-down"></b>
@@ -73,7 +73,7 @@
             <b class="arrow"></b>
             <ul class="submenu">
                 <li class="">
-                    <a href="${readGuidelineListUrl}">
+                    <a href="${readGuidelineListUrl}" style="font-size: 1.2em;">
                         <i class="menu-icon fa fa-caret-right"></i>
                         <fmt:message key="label.guideline.read.list" bundle="${lang}"/>
                     </a>
@@ -83,8 +83,8 @@
         </li>
 
         <li class="">
-            <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-list"></i>
+            <a href="#" class="dropdown-toggle" style="font-size: 1.2em;">
+                <i class="fa fa-user" aria-hidden="true"></i>
                 <span class="menu-text"></span>
                 <fmt:message key="label.dashboard" bundle="${lang}"/>
                 <b class="arrow fa fa-angle-down"></b>
@@ -92,7 +92,7 @@
             <b class="arrow"></b>
             <ul class="submenu">
                 <li class="">
-                    <a href="${userListUrl}">
+                    <a href="${userListUrl}" style="font-size: 1.2em;">
                         <i class="menu-icon fa fa-caret-right"></i>
                         <fmt:message key="label.user.management" bundle="${lang}"/>
                     </a>
@@ -101,8 +101,8 @@
             </ul>
         </li>
         <li class="">
-            <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-list"></i>
+            <a href="#" class="dropdown-toggle" style="font-size: 1.2em;">
+                <i class="fa fa-folder-open-o" aria-hidden="true"></i>
                 <span class="menu-text"></span>
                 <fmt:message key="lable.exercise.management" bundle="${lang}"/>
                 <b class="arrow fa fa-angle-down"></b>
@@ -110,7 +110,7 @@
             <b class="arrow"></b>
             <ul class="submenu">
                 <li class="">
-                    <a href="<c:url value="/admin-exericse-upload.html"/>">
+                    <a href="<c:url value="/admin-exericse-upload.html"/>" style="font-size: 1.2em;">
                         <i class="menu-icon fa fa-caret-right"></i>
                         <fmt:message key="label.exercise.audio.image.upload" bundle="${lang}"/>
                     </a>
@@ -119,8 +119,8 @@
             </ul>
         </li>
         <li class="">
-            <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-list"></i>
+            <a href="#" class="dropdown-toggle" style="font-size: 1.2em;">
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
                 <span class="menu-text"></span>
                 <fmt:message key="label.statistic" bundle="${lang}"/>
                 <b class="arrow fa fa-angle-down"></b>
@@ -128,7 +128,7 @@
             <b class="arrow"></b>
             <ul class="submenu">
                 <li class="">
-                    <a href="<c:url value="/admin-user-statistic.html"/>">
+                    <a href="<c:url value="/admin-user-statistic.html"/>" style="font-size: 1.2em;">
                         <i class="menu-icon fa fa-caret-right"></i>
                         <fmt:message key="label.user.statistic" bundle="${lang}"/>
                     </a>
