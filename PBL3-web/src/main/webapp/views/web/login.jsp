@@ -24,7 +24,7 @@
             padding: 16px 36px 36px;
             position: relative;
             width: 360px;
-            height: 300px;
+            height: 330px;
             border: 2px solid rgba(255,255,255,.5);
             border-radius: 20px;
             backdrop-filter: blur(20px);
@@ -63,6 +63,9 @@
             color: #fff;
             font-weight: 500;
         }
+        .widget-main.error {
+            height: 390px !important;
+        }
     </style>
 </head>
 <body>
@@ -85,6 +88,12 @@
                                 </button>
                                     ${messageResponse}
                             </div>
+                            <script>
+                                const widgetMain = document.querySelector('.widget-main');
+
+                                widgetMain.classList.add('error');
+
+                            </script>
                         </c:if>
                         <label class="block clearfix">
                             <span class="block input-icon input-icon-right">
