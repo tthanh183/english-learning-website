@@ -24,7 +24,9 @@
                                         <li><a href="about.html">Team</a></li>
                                     </ul>
                                 </li>
-                                <li class="regis"><a href="/registration.html"><fmt:message key="label.registration" bundle="${lang}"/></a></li>
+                                <c:if test="${empty login_name}">
+                                    <li class="regis"><a href="/registration.html"><fmt:message key="label.registration" bundle="${lang}"/></a></li>
+                                </c:if>
                                 <c:if test="${not empty login_name}">
                                     <li>
                                         <div id="notificationContainer" style="position: relative;">
@@ -51,14 +53,6 @@
                                         </div>
                                     </li>
                                 </c:if>
-
-                                <%--                                <c:if test="${not empty login_name}">--%>
-                                <%--                                    <li>Xin chao: ${login_name}</li>--%>
-                                <%--                                    <c:url var="logoutUrl" value="/logout.html">--%>
-                                <%--                                        <c:param name="action" value="logout"/>--%>
-                                <%--                                    </c:url>--%>
-                                <%--                                    <li><a href="${logoutUrl}"><fmt:message key="label.logout" bundle="${lang}"/></a></li>--%>
-                                <%--                                </c:if>--%>
                                 <c:if test="${empty login_name}">
                                     <c:url var="loginUrl" value="/login.html">
                                         <c:param name="action" value="login"/>

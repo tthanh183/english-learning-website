@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/common/taglib.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -198,7 +199,10 @@
       </div>
       <button type="submit" class="btn">Register</button>
       <div class="login-register">
-        <p>Already have an account? <a href="/login.html" class="login-link">Login</a></p>
+        <c:url var="loginUrl" value="/login.html">
+          <c:param name="action" value="login"/>
+        </c:url>
+        <p>Already have an account? <a href="${loginUrl}">Login</a></p>
       </div>
     </form>
   </div>

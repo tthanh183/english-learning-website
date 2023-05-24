@@ -112,7 +112,7 @@
                         <div class="space-4"></div>
 
                         <div class="login-register">
-                            <p style="font-size: 1.2em;">Don't have a account? <a href="#" class="register-link">Register</a></p>
+                            <p style="font-size: 1.2em;">Don't have a account? <a href="/registration.html" class="register-link">Register</a></p>
                         </div>
                     </fieldset>
                 </form>
