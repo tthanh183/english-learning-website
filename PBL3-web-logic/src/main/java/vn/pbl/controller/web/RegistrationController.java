@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 @WebServlet("/registration.html")
 public class RegistrationController extends HttpServlet {
@@ -36,17 +38,18 @@ public class RegistrationController extends HttpServlet {
         RoleDTO roleDTO = new RoleDTO();
         roleDTO.setRoleId(3);
         userDTO.setRoleDTO(roleDTO);
-        CheckLogin login = SingletonServiceUtil.getUserServiceInstance().checkLogin(userDTO.getEmail(), userDTO.getPassword());
-        if(login.isUserExist() == false) {
-            SingletonServiceUtil.getUserServiceInstance().saveUser(userDTO);
-            SessionUtil.getInstance().putValue(request, WebConstant.LOGIN_NAME, userDTO.getEmail());
-            RequestDispatcher rd = request.getRequestDispatcher("views/web/home.jsp");
-            rd.forward(request, response);
-        }
-        else {
+        Map<String, Object> property = new HashMap<>();
+        property.put("email", userDTO.getEmail());
+        Object[] objects = SingletonServiceUtil.getUserServiceInstance().findByProperty(property,null,null,null,null );
+        if((long)objects[0] > 0) {
             request.setAttribute(WebConstant.MESSAGE_RESPONSE,"Tài khoản đã tồn tại");
             RequestDispatcher rd = request.getRequestDispatcher("views/web/registration.jsp");
             rd.forward(request, response);
+        }
+        else{
+            SingletonServiceUtil.getUserServiceInstance().saveUser(userDTO);
+            SessionUtil.getInstance().putValue(request, WebConstant.LOGIN_NAME, userDTO.getEmail());
+            response.sendRedirect("/home.html");
         }
     }
 }
