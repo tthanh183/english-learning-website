@@ -43,7 +43,7 @@ HEADER ROW STYLE
 	justify-content: space-between;
 	align-items: center;
 	z-index: 99;
-	background-image: url('/template/web/img/header1.jpg')  ;
+	background-image: url('/image/header1.jpg')  ;
 	background-size: cover;
 }
 
