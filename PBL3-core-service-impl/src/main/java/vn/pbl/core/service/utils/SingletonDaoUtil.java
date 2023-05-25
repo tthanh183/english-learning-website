@@ -18,6 +18,7 @@ public class SingletonDaoUtil {
     private static ExerciseDaoImpl exerciseDaoImpl = null;
     private static ExerciseQuestionDaoImpl exerciseQuestionDaoImpl = null;
     private static ResultDaoImpl resultDaoImpl = null;
+    private static NotificationDaoImpl notificationDaoImpl = null ;
     public static UserDaoImpl getUserDaoInstance() {
         if(userDaoImpl == null) {
             userDaoImpl = new UserDaoImpl();
@@ -88,5 +89,11 @@ public class SingletonDaoUtil {
             resultDaoImpl = new ResultDaoImpl();
         }
         return resultDaoImpl;
+    }
+    public static NotificationDaoImpl getNotificationDaoInstance()  {
+        if(notificationDaoImpl == null) {
+            notificationDaoImpl = new NotificationDaoImpl();
+        }
+        return notificationDaoImpl;
     }
 }

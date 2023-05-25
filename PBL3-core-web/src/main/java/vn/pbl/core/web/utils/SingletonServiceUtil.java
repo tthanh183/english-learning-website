@@ -4,6 +4,7 @@ import vn.pbl.core.daoimpl.ListenGuidelineDaoImpl;
 import vn.pbl.core.daoimpl.RoleDaoImpl;
 import vn.pbl.core.daoimpl.UserDaoImpl;
 import vn.pbl.core.service.ListenGuidelineService;
+import vn.pbl.core.service.NotificationService;
 import vn.pbl.core.service.ReadGuidelineService;
 import vn.pbl.core.service.impl.*;
 
@@ -19,6 +20,7 @@ public class SingletonServiceUtil {
     private static ExerciseQuestionServiceImpl exerciseQuestionServiceImpl = null;
     private static ExerciseServiceImpl exerciseServiceImpl = null;
     private static ResultServiceImpl resultServiceImpl = null;
+    private static NotificationServiceImpl notificationServiceImpl = null ;
     public static UserServiceImpl getUserServiceInstance() {
         if(userServiceImpl == null) {
             userServiceImpl = new UserServiceImpl();
@@ -89,5 +91,11 @@ public class SingletonServiceUtil {
             resultServiceImpl = new ResultServiceImpl();
         }
         return resultServiceImpl;
+    }
+    public static NotificationServiceImpl getNotificationServiceInstance() {
+        if(notificationServiceImpl == null) {
+            notificationServiceImpl = new NotificationServiceImpl();
+        }
+        return notificationServiceImpl;
     }
 }

@@ -120,6 +120,24 @@
         </li>
         <li class="">
             <a href="#" class="dropdown-toggle" style="font-size: 1.2em;">
+                <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+                <span class="menu-text"></span>
+                <fmt:message key="label.notification.management" bundle="${lang}"/>
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <b class="arrow"></b>
+            <ul class="submenu">
+                <li class="">
+                    <a href="<c:url value="/admin-notification.html"/>" style="font-size: 1.2em;">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        <fmt:message key="label.notification.list" bundle="${lang}"/>
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+        </li>
+        <li class="">
+            <a href="#" class="dropdown-toggle" style="font-size: 1.2em;">
                 <i class="fa fa-bar-chart" aria-hidden="true"></i>
                 <span class="menu-text"></span>
                 <fmt:message key="label.statistic" bundle="${lang}"/>

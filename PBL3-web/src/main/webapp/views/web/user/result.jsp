@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/common/taglib.jsp"%>
+<c:url var="requestUrl" value="/user-result.html"/>
 <html>
 <head>
     <title><fmt:message key="label.user.result.list" bundle="${lang}"/></title>
