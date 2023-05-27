@@ -206,7 +206,7 @@
         <c:url var="loginUrl" value="/login.html">
           <c:param name="action" value="login"/>
         </c:url>
-        <p>Already have an account? <a href="${loginUrl}">Login</a></p>
+        <p style="font-size: 1.2em">Already have an account? <a href="${loginUrl}">Login</a></p>
       </div>
     </form>
   </div>
