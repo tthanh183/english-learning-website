@@ -120,7 +120,7 @@
         </li>
         <li class="">
             <a href="#" class="dropdown-toggle" style="font-size: 1.2em;">
-                <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+                <i class="fa fa-bell" aria-hidden="true"></i>
                 <span class="menu-text"></span>
                 <fmt:message key="label.notification.management" bundle="${lang}"/>
                 <b class="arrow fa fa-angle-down"></b>

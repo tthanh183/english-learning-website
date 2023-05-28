@@ -11,6 +11,15 @@
         .breadcrumb>li.active {
             font-size: 1.4em;
         }
+        label.col-sm-2.control-label {
+            padding: 0;
+        }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            transition: background-color 5000s ease-in-out 0s;
+        }
     </style>
 </head>
 <body>
