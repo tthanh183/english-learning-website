@@ -26,7 +26,6 @@ public class ResultController extends HttpServlet {
         ResultCommand resultCommand = new ResultCommand();
         String email = (String) SessionUtil.getInstance().getValue(request,"login_name");
         UserDTO userDTO = SingletonServiceUtil.getUserServiceInstance().findEqualUnique("email",email);
-//        ExaminationDTO examinationDTO = SingletonDaoUtil.getExaminationDaoInstance().f
         Object[] objects = SingletonServiceUtil.getResultServiceInstance().findResultByUserId(userDTO.getUserId());
         resultCommand.setListResult((List<ResultDTO>) objects[1]);
         resultCommand.setTotalItems(Integer.parseInt(objects[0].toString()));

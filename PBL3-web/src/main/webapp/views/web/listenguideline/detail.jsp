@@ -87,6 +87,7 @@
             <div id="listcomment">
                 <c:forEach items="${listcomment}" var="list">
                     <h4 style="color: dodgerblue;font-style: italic;" id="name_member">${list.user.email}</h4>
+                    <h4 style="color: red" id="name_member">${list.createdDate}</h4>
                     <textarea disabled class="input-xxlarge showtext" rows="3"
                               name="cmtvocabularycontent">${list.content}</textarea>
                 </c:forEach>

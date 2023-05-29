@@ -53,4 +53,9 @@ public class ReadGuidelineServiceImpl implements ReadGuidelineService {
         Integer result  = SingletonDaoUtil.getReadGuidelineDaoInstance().delete(ids);
         return result;
     }
+    @Override
+    public Integer count() {
+        List<ReadGuidelineEntity> list = SingletonDaoUtil.getReadGuidelineDaoInstance().findAll();
+        return list.size();
+    }
 }

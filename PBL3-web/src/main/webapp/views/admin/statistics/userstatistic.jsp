@@ -9,30 +9,27 @@
 </head>
 <body>
     <div class="container">
-        <canvas id="myChart"style="max-width: 600px; max-height: 400px;"></canvas>
+        <canvas id="myChart"style="max-width: 800px; max-height: 600px;"></canvas>
     </div>
     <script>
         let myChart = document.getElementById('myChart').getContext('2d');
-        // Global Options
-
-        // Chart.defaults.global.defaultFontFamily = 'Lato';
-        // Chart.defaults.global.defaultFontSize = 18;
-        // Chart.defaults.global.defaultFontColor = '#777';
 
         let massPopChart = new Chart(myChart, {
             type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
             data:{
-                labels:['Giới tính nam', 'Giới tính nữ'],
+                labels:['Giới tính nam', 'Giới tính nữ', 'Chưa xác định giới tính'],
                 datasets:[{
                     label:'Giới tính',
                     data:[
                         ${maleCount},
-                        ${femaleCount}
+                        ${femaleCount},
+                        ${nullGender}
                     ],
                     //backgroundColor:'green',
                     backgroundColor:[
                         'rgba(255, 99, 132, 0.6)',
                         'rgba(54, 162, 235, 0.6)',
+                        'rgba(24, 153, 20, 0.6)'
                     ],
                     borderWidth:1,
                     borderColor:'#777',
@@ -41,31 +38,36 @@
                 }]
             },
             options:{
-                plugin:{
-                    title:{
-                        display:true,
-                        position:'right',
-                        text:'Biểu đồ cột người dùng theo độ tuổi',
-                        fontSize:30
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Biểu đồ cột số lượng người dùng theo độ giới tính',
+                        fontSize: 30
                     }
                 },
-                legend:{
-                    display:true,
-                    position:'right',
-                    labels:{
-                        fontColor:'#000'
+                legend: {
+                    display: true,
+                    position: 'right',
+                    labels: {
+                        fontColor: '#000000'
                     }
                 },
-                layout:{
-                    padding:{
-                        left:100,
-                        right:0,
-                        bottom:0,
-                        top:100
+                layout: {
+                    padding: {
+                        left: 100,
+                        right: 0,
+                        bottom: 0,
+                        top: 100
                     }
                 },
-                tooltips:{
-                    enabled:true
+                tooltips: {
+                    enabled: true
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        suggestedMin: 0 // Thêm thiết lập này để đảm bảo trục y bắt đầu từ giá trị 0
+                    }
                 }
             }
         });

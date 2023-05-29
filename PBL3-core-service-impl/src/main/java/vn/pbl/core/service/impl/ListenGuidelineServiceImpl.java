@@ -52,4 +52,10 @@ public class ListenGuidelineServiceImpl implements ListenGuidelineService {
         Integer result  = SingletonDaoUtil.getListenGuidelineDaoInstance().delete(ids);
         return result;
     }
+
+    @Override
+    public Integer count() {
+        List<ListenGuidelineEntity> list = SingletonDaoUtil.getListenGuidelineDaoInstance().findAll();
+        return list.size();
+    }
 }

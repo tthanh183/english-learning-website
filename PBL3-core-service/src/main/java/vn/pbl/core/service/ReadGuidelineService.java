@@ -13,4 +13,5 @@ public interface ReadGuidelineService {
     void saveReadGuideline(ReadGuidelineDTO dto) throws ConstraintViolationException;
     ReadGuidelineDTO updateReadGuideline(ReadGuidelineDTO dto);
     Integer delete(List<Integer> ids);
+    Integer count();
 }

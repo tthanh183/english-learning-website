@@ -11,6 +11,7 @@ import vn.pbl.core.persistence.entity.UserEntity;
 import vn.pbl.core.service.CommentService;
 import vn.pbl.core.service.utils.SingletonDaoUtil;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -44,6 +45,8 @@ public class CommentServiceImpl implements CommentService {
             commentEntity.setUser(userEntity);
             commentEntity.setListenGuideline(listenGuidelineEntity);
             commentEntity.setContent(content);
+            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+            commentEntity.setCreatedDate(timestamp);
             commentEntity =  SingletonDaoUtil.getCommentDaoInstance().save(commentEntity);
             commentDTO = CommentBeanUtil.entity2Dto(commentEntity);
         }
