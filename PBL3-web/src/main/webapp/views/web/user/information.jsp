@@ -10,30 +10,27 @@
     <style>
 
         .tab button:hover {
-            background-color: #006dcc;
+            opacity: 1;
         }
         /* Style cho tab */
-        .tab {
-            overflow: hidden;
-            border: 1px solid #006dcc;
-            background-color: #006dcc;
-        }
 
         /* Style cho button chọn tab */
         .tab button {
-            background-color: inherit;
-            float: left;
-            border: none;
-            outline: none;
+            background-color: #006dcc;
             cursor: pointer;
-            padding: 14px 16px;
-            transition: 0.3s;
-            font-size: 17px;
+            width: 100%;
+            border-radius: 20px;
+            padding: 10px;
+            margin-top: 6px;
+            font-size: 1.2em;
+            opacity: 0.8;
+            transition: 0.4s;
         }
 
         /* Style cho button chọn tab khi được click */
         .tab button.active {
             background-color: #ccc;
+            color: #000;
         }
 
         /* Style cho nội dung của tab */
@@ -117,9 +114,9 @@
             margin-bottom: 4px;
             font-size: 1.1em;
         }
-        div#contact-info {
-            background: linear-gradient(185.46deg, #A293EC 23.92%, #5F67EC 112.43%);
-        }
+        /*div#contact-info {*/
+        /*    background: linear-gradient(185.46deg, #A293EC 23.92%, #5F67EC 112.43%);*/
+        /*}*/
 
     </style>
 </head>
@@ -130,7 +127,7 @@
 </div>
 
 <div id="contact-info" class="tabcontent">
-    <a style="font-size: 1.4em; font-weight: 600; "><fmt:message key="label.information" bundle="${lang}"/></a>
+    <a style="font-size: 2.2em; font-weight: 600; "><fmt:message key="label.information" bundle="${lang}"/></a>
     <form id="myForm" action="${editUserUrl}" method="post" >
         <label for="name"><fmt:message key="label.name" bundle="${lang}"/></label>
         <input type="text" id="name" name="name" required value="${item.pojo.name}"><br>

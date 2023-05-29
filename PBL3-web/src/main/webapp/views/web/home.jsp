@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div id="myCarousel" class="carousel slide">
+<div id="myCarousel" class="carousel slide" style="margin-top: 72px">
     <div class="carousel-inner">
 
         <div class="active item">
@@ -22,7 +22,10 @@
                         <div class="carousel-caption">
                             <h1>Example headline</h1>
                             <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <a class="btn btn-large btn-primary" href="#">Sign up today</a>
+                            <c:url var="loginUrl" value="/login.html">
+                                <c:param name="action" value="login"/>
+                            </c:url>
+                            <a class="btn btn-large btn-primary" href="${loginUrl}">Sign up today</a>
                         </div>
 
                     </div>
