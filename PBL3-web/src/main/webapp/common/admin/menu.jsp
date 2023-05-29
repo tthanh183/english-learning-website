@@ -148,7 +148,14 @@
                 <li class="">
                     <a href="<c:url value="/admin-user-statistic.html"/>" style="font-size: 1.2em;">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        <fmt:message key="label.user.statistic" bundle="${lang}"/>
+                        <fmt:message key="label.user.gender.statistic" bundle="${lang}"/>
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <a href="<c:url value="/admin-guideline-statistic.html"/>" style="font-size: 1.2em;">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        <fmt:message key="label.guideline.statistic" bundle="${lang}"/>
                     </a>
                     <b class="arrow"></b>
                 </li>

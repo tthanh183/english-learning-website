@@ -146,6 +146,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Long nullGenderCount(Map<String, Object> property, String sortExpression, String sortDirection, Integer offset, Integer limit) {
+        Object[] objects = SingletonDaoUtil.getUserDaoInstance().findByProperty(property,sortExpression,sortDirection,offset,limit,"and gender  IS NULL");
+        return (Long)objects[0];
+    }
+
+    @Override
     public UserDTO findEqualUnique(String property, Object value) {
         UserEntity entity = SingletonDaoUtil.getUserDaoInstance().findEqualUnique(property,value);
         UserDTO dto = UserBeanUtil.entity2Dto(entity);

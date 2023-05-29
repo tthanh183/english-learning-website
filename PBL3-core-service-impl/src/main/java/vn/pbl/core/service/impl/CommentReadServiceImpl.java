@@ -7,6 +7,7 @@ import vn.pbl.core.persistence.entity.*;
 import vn.pbl.core.service.CommentReadService;
 import vn.pbl.core.service.utils.SingletonDaoUtil;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -40,6 +41,8 @@ public class CommentReadServiceImpl implements CommentReadService {
             commentReadEntity.setUser(userEntity);
             commentReadEntity.setReadGuideline(readGuidelineEntity);
             commentReadEntity.setContent(content);
+            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+            commentReadEntity.setCreatedDate(timestamp);
             commentReadEntity =  SingletonDaoUtil.getCommentReadDaoInstance().save(commentReadEntity);
             commentReadDTO = CommentReadBeanUtil.entity2Dto(commentReadEntity);
         }
