@@ -42,11 +42,6 @@ import java.util.*;
 
 public class UserController extends HttpServlet {
     private final Logger log = Logger.getLogger(this.getClass());
-    private final String SHOW_IMPORT_USER = "show_import_user";
-    private final String READ_EXCEL = "read_excel";
-    private final String VALIDATE_IMPORT = "validate_import";
-    private final String LIST_USER_IMPORT = "list_user_import";
-    private final String IMPORT_DATA = "import_data";
     ResourceBundle bundle = ResourceBundle.getBundle("ResourcesBundle");
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -73,34 +68,7 @@ public class UserController extends HttpServlet {
             request.setAttribute(WebConstant.FORM_ITEM,command);
             RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/edit.jsp");
             rd.forward(request, response);
-        }else if (command.getUrlType() != null && command.getUrlType().equals(SHOW_IMPORT_USER)) {
-            RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/importuser.jsp");
-            rd.forward(request, response);
-        }else if(command.getUrlType() != null && command.getUrlType().equals(VALIDATE_IMPORT)) {
-            List<UserImportDTO> userImportDTOS = (List<UserImportDTO>) SessionUtil.getInstance().getValue(request, LIST_USER_IMPORT);
-            command.setUserImportDTOS(returnListUserImport(command, userImportDTOS, request));
-            request.setAttribute(WebConstant.LIST_ITEMS, command);
-            RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/importuser.jsp");
-            rd.forward(request, response);
         }
-    }
-
-    private List<UserImportDTO> returnListUserImport(UserCommand command,List<UserImportDTO> userImportDTOS, HttpServletRequest request) {
-        command.setMaxPageItems(10);
-        RequestUtil.initSearchBean(request,command);
-        command.setTotalItems(userImportDTOS.size());
-        int fromIndex = command.getFirstItem();
-        if(fromIndex > command.getTotalItems()) {
-            fromIndex = 0;
-            command.setFirstItem(0);
-        }
-        int toIndex = command.getFirstItem() + command.getTotalItems();
-        if(userImportDTOS.size() > 0 ) {
-            if(toIndex > userImportDTOS.size()) {
-                toIndex = userImportDTOS.size();
-            }
-        }
-        return userImportDTOS.subList(fromIndex,toIndex);
     }
 
     private Map<String, String> buildMapRedirectMessage(ResourceBundle bundle) {
@@ -138,106 +106,9 @@ public class UserController extends HttpServlet {
                 RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/edit.jsp");
                 rd.forward(request, response);
             }
-            //here
-            if(objects != null ) {
-                String urlType = null;
-                Map<String, String> mapValue = (Map<String, String>) objects[3];
-                for(Map.Entry<String, String> item : mapValue.entrySet()) {
-                    if(item.getKey().equals("urlType")) {
-                        urlType = item.getValue();
-                    }
-                }
-                if(urlType != null && urlType.equals(READ_EXCEL)) {
-                    String fileLocation = objects[1].toString();
-                    String fileName = objects[2].toString();
-                    List<UserImportDTO> excelValues = returnValueFromExcel(fileName, fileLocation);
-                    validateData(excelValues);
-                    SessionUtil.getInstance().putValue(request, LIST_USER_IMPORT, excelValues);
-                    response.sendRedirect("/admin-user-import-validate.html?urlType=validate_import");
-                }
-            }
-            if(command.getUrlType() != null && command.getUrlType().equals(IMPORT_DATA)) {
-                List<UserImportDTO> userImportDTOS = (List<UserImportDTO>) SessionUtil.getInstance().getValue(request, LIST_USER_IMPORT);
-                SingletonServiceUtil.getUserServiceInstance().saveUserImport(userImportDTOS);
-                SessionUtil.getInstance().remove(request,LIST_USER_IMPORT);
-                response.sendRedirect("/admin-user-list.html?urlType=url_list");
-            }
         }catch (Exception e) {
             log.error(e.getMessage(),e);
             request.setAttribute(WebConstant.MESSAGE_RESPONSE,WebConstant.REDIRECT_ERROR);
         }
-
-    }
-
-    private void validateData(List<UserImportDTO> excelValues) {
-        Set<String> stringSet = new HashSet<String>();
-        for(UserImportDTO item : excelValues)  {
-            validateRequiredField(item);
-            validateDuplicate(item, stringSet);
-        }
-        SingletonServiceUtil.getUserServiceInstance().validateImportUser(excelValues);
-    }
-
-    private void validateDuplicate(UserImportDTO item, Set<String> stringSet) {
-        String message = item.getError();
-        if(! stringSet.contains(item.getEmail())) {
-            stringSet.add(item.getEmail());
-        }else {
-            if(item.isValid()) {
-                message += "<br/";
-                message+= bundle.getString("label.email.duplicate");
-            }
-        }
-        if(StringUtils.isNotBlank(message)) {
-            item.setValid(false);
-            item.setError(message);
-        }
-    }
-
-    private void validateRequiredField(UserImportDTO item) {
-        String message = "";
-        if(StringUtils.isBlank(item.getEmail())) {
-            message += "<br/";
-            message += bundle.getString("label.email.notempty");
-        }
-        if(StringUtils.isBlank(item.getPassword())) {
-            message += "<br/";
-            message += bundle.getString("label.password.notempty");
-        }
-        if(StringUtils.isBlank(item.getRoleName())) {
-            message += "<br/";
-            message += bundle.getString("label.rolename.notempty");
-        }
-        if(StringUtils.isBlank(message)) {
-            item.setValid(false);
-        }
-        item.setError(message);
-    }
-
-    private List<UserImportDTO> returnValueFromExcel(String fileName, String fileLocation) throws IOException{
-        Workbook workbook = ExcelPoiUtil.getWorkBook(fileName, fileLocation);
-        Sheet sheet = workbook.getSheetAt(0);
-        List<UserImportDTO> excelValues = new ArrayList<UserImportDTO>();
-        for (int i=1; i <= sheet.getLastRowNum(); i++) {
-            Row row = sheet.getRow(i);
-            UserImportDTO userImportDTO = readDataFromExcel(row);
-            excelValues.add(userImportDTO);
-        }
-        return excelValues;
-    }
-
-    private UserImportDTO readDataFromExcel(Row row) {
-        UserImportDTO userImportDTO = new UserImportDTO();
-        userImportDTO.setEmail(ExcelPoiUtil.getCellValue(row.getCell(0)));
-        userImportDTO.setPassword(ExcelPoiUtil.getCellValue(row.getCell(1)));
-        userImportDTO.setName(ExcelPoiUtil.getCellValue(row.getCell(2)));
-        userImportDTO.setAge(Integer.parseInt(ExcelPoiUtil.getCellValue(row.getCell(3))));
-        userImportDTO.setGender(ExcelPoiUtil.getCellValue(row.getCell(4)));
-        userImportDTO.setAddress(ExcelPoiUtil.getCellValue(row.getCell(5)));
-        userImportDTO.setPhone(ExcelPoiUtil.getCellValue(row.getCell(6)));
-        userImportDTO.setRoleName(ExcelPoiUtil.getCellValue(row.getCell(7)));
-        userImportDTO.setIsVip(Integer.parseInt(ExcelPoiUtil.getCellValue(row.getCell(8))));
-        userImportDTO.setIsActive(Integer.parseInt(ExcelPoiUtil.getCellValue(row.getCell(9))));
-        return userImportDTO;
     }
 }

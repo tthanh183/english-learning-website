@@ -1,14 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/common/taglib.jsp" %>
-
 <c:url var="editUserUrl" value="/ajax-admin-user-edit.html">
     <c:param name="urlType" value="url_edit"/>
 </c:url>
 <c:url var="listUserUrl" value="/admin-user-list.html">
     <c:param name="urlType" value="url_list"/>
-</c:url>
-<c:url var="importUrl" value="/admin-user-import.html">
-    <c:param name="urlType" value="show_import_user"/>
 </c:url>
 <html>
 <head>
@@ -66,13 +62,6 @@
                                                     <i class="fa fa-trash-o bigger-110 pink"></i>
                                                 </span>
                                             </button>
-                                            <a flag="info"
-                                               class="dt-button buttons-colvis btn btn-white btn-primary btn-bold"
-                                               href="${importUrl}">
-                                                <span>
-                                                    <i class="fa fa-file" aria-hidden="true"></i>
-                                                </span>
-                                            </a>
                                         </div>
                                     </div>
                                 </div>

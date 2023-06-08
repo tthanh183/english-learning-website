@@ -5,8 +5,8 @@
 	<div class="footer-inner">
 		<div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">Toeic Online</span>
-							 &copy; 2023-2024
+							<span class="blue bolder">PBL3</span>
+							 &copy; 2022-2023
 						</span>
 
 			&nbsp; &nbsp;
