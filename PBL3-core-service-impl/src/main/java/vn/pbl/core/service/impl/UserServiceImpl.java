@@ -157,4 +157,9 @@ public class UserServiceImpl implements UserService {
         UserDTO dto = UserBeanUtil.entity2Dto(entity);
         return dto;
     }
+    @Override
+    public Integer delete(List<Integer> ids) {
+        Integer result  = SingletonDaoUtil.getUserDaoInstance().delete(ids);
+        return result;
+    }
 }

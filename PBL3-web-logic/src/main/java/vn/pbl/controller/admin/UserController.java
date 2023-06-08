@@ -48,18 +48,30 @@ public class UserController extends HttpServlet {
         UserCommand command = FormUtil.populate(UserCommand.class, request);
         UserDTO pojo = command.getPojo();
         if(command.getUrlType() != null && command.getUrlType().equals(WebConstant.URL_LIST)) {
+            if (command.getCrudaction() != null && command.getCrudaction().equals(WebConstant.REDIRECT_DELETE)) {
+                List<Integer> ids = new ArrayList<Integer>();
+                for (String item: command.getCheckList()) {
+                    ids.add(Integer.parseInt(item));
+                }
+                Integer result = SingletonServiceUtil.getUserServiceInstance().delete(ids);
+                if (result != ids.size()) {
+                    command.setCrudaction(WebConstant.REDIRECT_ERROR);
+                }
+            }
+
             Map<String, Object> mapProperty = new HashMap<String, Object>();
-            RequestUtil.initSearchBean(request,command);
+            RequestUtil.initSearchBean(request, command);
             Object[] objects = SingletonServiceUtil.getUserServiceInstance().findByProperty(mapProperty, command.getSortExpression(), command.getSortDirection(), command.getFirstItem(), command.getMaxPageItems());
             command.setListResult((List<UserDTO>) objects[1]);
             command.setTotalItems(Integer.parseInt(objects[0].toString()));
-            request.setAttribute(WebConstant.LIST_ITEMS,command);
-            if(command.getCrudaction() != null) {
+            request.setAttribute(WebConstant.LIST_ITEMS, command);
+            if (command.getCrudaction() != null) {
                 Map<String, String> mapMessage = buildMapRedirectMessage(bundle);
-                WebCommonUtil.addRedirectMessage(request,command.getCrudaction(),mapMessage);
+                WebCommonUtil.addRedirectMessage(request, command.getCrudaction(), mapMessage);
             }
             RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/list.jsp");
             rd.forward(request, response);
+
         } else if (command.getUrlType() != null && command.getUrlType().equals(WebConstant.URL_EDIT)) {
             if(pojo != null && pojo.getUserId() != null) {
                 command.setPojo(SingletonServiceUtil.getUserServiceInstance().findById(pojo.getUserId()));
