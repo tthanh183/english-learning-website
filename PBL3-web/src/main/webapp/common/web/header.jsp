@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <!--LOGO-->
-            <div class="span2"><a class="brand" href="#"><img src="/template/web/img/toeic-logo.png"/></a></div>
+            <div class="span2"><a class="brand" href="#"><img src="/template/web/img/logo.png" class="logo-web" style="width: 75%"/></a></div>
             <!-- /LOGO -->
 
             <!-- MAIN NAVIGATION -->
